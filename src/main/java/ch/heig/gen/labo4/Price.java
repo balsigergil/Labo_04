@@ -10,21 +10,13 @@ public class Price {
         this.currency = currency;
     }
 
-    public double getAmount() {
-        return amount;
-    }
-
-    public String getCurrency() {
-        return currency;
-    }
-
     public String toJSON() {
         StringBuilder sb = new StringBuilder();
         sb.append("\"price\": ");
-        sb.append(getAmount());
+        sb.append(amount);
         sb.append(", ");
         sb.append("\"currency\": \"");
-        sb.append(getCurrency());
+        sb.append(currency);
         return sb.toString();
     }
 }
