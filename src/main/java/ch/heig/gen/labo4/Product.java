@@ -4,15 +4,13 @@ public class Product {
     private final String code;
     private final Color color;
     private final Size size;
-    private final double price;
-    private final String currency;
+    private final Price price;
 
-    public Product(String code, Color color, Size size, double price, String currency) {
+    public Product(String code, Color color, Size size, Price price) {
         this.code = code;
         this.color = color;
         this.size = size;
         this.price = price;
-        this.currency = currency;
     }
 
     public String getCode() {
@@ -23,12 +21,8 @@ public class Product {
         return size;
     }
 
-    public double getPrice() {
+    public Price getPrice() {
         return price;
-    }
-
-    public String getCurrency() {
-        return currency;
     }
 
     String getColorName() {
@@ -57,10 +51,10 @@ public class Product {
         }
 
         sb.append("\"price\": ");
-        sb.append(getPrice());
+        sb.append(getPrice().getAmount());
         sb.append(", ");
         sb.append("\"currency\": \"");
-        sb.append(getCurrency());
+        sb.append(getPrice().getCurrency());
         sb.append("\"}, ");
 
         return sb.toString();
