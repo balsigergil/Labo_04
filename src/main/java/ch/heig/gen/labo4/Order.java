@@ -11,14 +11,6 @@ public class Order {
         this.id = id;
     }
 
-    public int getOrderId() {
-        return id;
-    }
-
-    public int getProductsCount() {
-        return products.size();
-    }
-
     public void AddProduct(Product product) {
         products.add(product);
     }
@@ -27,7 +19,7 @@ public class Order {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("\"id\": ");
-        sb.append(getOrderId());
+        sb.append(id);
         sb.append(", ");
         sb.append("\"products\": [");
 
@@ -35,7 +27,7 @@ public class Order {
             sb.append(product.toJSON());
         }
 
-        if (getProductsCount() > 0) {
+        if (products.size() > 0) {
             sb.delete(sb.length() - 2, sb.length());
         }
 
