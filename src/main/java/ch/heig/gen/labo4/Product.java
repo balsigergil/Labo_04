@@ -21,10 +21,6 @@ public class Product {
         return size;
     }
 
-    public Price getPrice() {
-        return price;
-    }
-
     String getColorName() {
         return color.toString();
     }
