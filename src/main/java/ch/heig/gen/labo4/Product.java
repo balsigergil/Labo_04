@@ -1,7 +1,6 @@
 package ch.heig.gen.labo4;
 
 public class Product {
-    public static final int SIZE_NOT_APPLICABLE = -1;
     private String code;
     private Color color;
     private Size size;
@@ -32,11 +31,11 @@ public class Product {
         return currency;
     }
 
-    String getColorFor() {
+    String getColorName() {
         return color.toString();
     }
 
-    String getSizeFor() {
+    String getSizeName() {
         return size.name();
     }
 }
