@@ -13,36 +13,20 @@ public class Product {
         this.price = price;
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public Size getSize() {
-        return size;
-    }
-
-    String getColorName() {
-        return color.toString();
-    }
-
-    String getSizeName() {
-        return size.name();
-    }
-
     String toJSON() {
         StringBuilder sb = new StringBuilder();
 
         sb.append("{");
         sb.append("\"code\": \"");
-        sb.append(getCode());
+        sb.append(code);
         sb.append("\", ");
         sb.append("\"color\": \"");
-        sb.append(getColorName());
+        sb.append(color.toString());
         sb.append("\", ");
 
-        if (getSize() != Size.NONE) {
+        if (size != Size.NONE) {
             sb.append("\"size\": \"");
-            sb.append(getSizeName());
+            sb.append(size.name());
             sb.append("\", ");
         }
 
