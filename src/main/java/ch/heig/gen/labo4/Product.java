@@ -39,7 +39,9 @@ public class Product {
         return size.name();
     }
 
-    void getProductContents(StringBuffer sb) {
+    String toJSON() {
+        StringBuilder sb = new StringBuilder();
+
         sb.append("{");
         sb.append("\"code\": \"");
         sb.append(getCode());
@@ -60,5 +62,7 @@ public class Product {
         sb.append("\"currency\": \"");
         sb.append(getCurrency());
         sb.append("\"}, ");
+
+        return sb.toString();
     }
 }
