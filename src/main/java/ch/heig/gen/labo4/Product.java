@@ -50,7 +50,7 @@ public class Product {
             sb.append("\", ");
         }
 
-        price.getPriceContents(sb, this);
+        sb.append(price.toJSON());
         sb.append("\"}, ");
 
         return sb.toString();

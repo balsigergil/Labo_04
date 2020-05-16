@@ -18,11 +18,13 @@ public class Price {
         return currency;
     }
 
-    void getPriceContents(StringBuilder sb, Product product) {
+    public String toJSON() {
+        StringBuilder sb = new StringBuilder();
         sb.append("\"price\": ");
-        sb.append(product.getPrice().getAmount());
+        sb.append(getAmount());
         sb.append(", ");
         sb.append("\"currency\": \"");
-        sb.append(product.getPrice().getCurrency());
+        sb.append(getCurrency());
+        return sb.toString();
     }
 }
