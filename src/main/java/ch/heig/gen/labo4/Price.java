@@ -17,4 +17,12 @@ public class Price {
     public String getCurrency() {
         return currency;
     }
+
+    void getPriceContents(StringBuilder sb, Product product) {
+        sb.append("\"price\": ");
+        sb.append(product.getPrice().getAmount());
+        sb.append(", ");
+        sb.append("\"currency\": \"");
+        sb.append(product.getPrice().getCurrency());
+    }
 }
