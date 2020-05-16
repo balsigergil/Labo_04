@@ -4,11 +4,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class OrdersWriterTest {
-    ArrayList<Order> orders = new ArrayList<>();
+    List<Order> orders = new ArrayList<>();
     Order order111 = new Order(111);
 
     @BeforeEach

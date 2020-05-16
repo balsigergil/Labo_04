@@ -1,11 +1,11 @@
 package ch.heig.gen.labo4;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class OrdersWriter {
-    private final ArrayList<Order> orders;
+    private final List<Order> orders;
 
-    public OrdersWriter(ArrayList<Order> orders) {
+    public OrdersWriter(List<Order> orders) {
         this.orders = orders;
     }
 
