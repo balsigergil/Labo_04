@@ -50,13 +50,17 @@ public class Product {
             sb.append("\", ");
         }
 
+        getPriceContents(sb);
+        sb.append("\"}, ");
+
+        return sb.toString();
+    }
+
+    private void getPriceContents(StringBuilder sb) {
         sb.append("\"price\": ");
         sb.append(getPrice().getAmount());
         sb.append(", ");
         sb.append("\"currency\": \"");
         sb.append(getPrice().getCurrency());
-        sb.append("\"}, ");
-
-        return sb.toString();
     }
 }
