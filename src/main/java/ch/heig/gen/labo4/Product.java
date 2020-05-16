@@ -1,38 +1,39 @@
 package ch.heig.gen.labo4;
 
 public class Product {
-    public static final int SIZE_NOT_APPLICABLE = -1;
-    private String code;
-    private int color;
-    private int size;
-    private double price;
-    private String currency;
+    private final String code;
+    private final Color color;
+    private final Size size;
+    private final Price price;
 
-    public Product(String code, int color, int size, double price, String currency) {
+    public Product(String code, Color color, Size size, Price price) {
         this.code = code;
         this.color = color;
         this.size = size;
         this.price = price;
-        this.currency = currency;
     }
 
-    public String getCode() {
-        return code;
+    String toJSON() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("{");
+        sb.append("\"code\": \"");
+        sb.append(code);
+        sb.append("\", ");
+        sb.append("\"color\": \"");
+        sb.append(color.toString());
+        sb.append("\", ");
+
+        if (size != Size.NONE) {
+            sb.append("\"size\": \"");
+            sb.append(size.name());
+            sb.append("\", ");
+        }
+
+        sb.append(price.toJSON());
+        sb.append("\"}, ");
+
+        return sb.toString();
     }
 
-    public int getColor() {
-        return color;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getCurrency() {
-        return currency;
-    }
 }
