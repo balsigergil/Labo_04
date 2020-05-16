@@ -38,4 +38,27 @@ public class Product {
     String getSizeName() {
         return size.name();
     }
+
+    void getProductContents(StringBuffer sb) {
+        sb.append("{");
+        sb.append("\"code\": \"");
+        sb.append(getCode());
+        sb.append("\", ");
+        sb.append("\"color\": \"");
+        sb.append(getColorName());
+        sb.append("\", ");
+
+        if (getSize() != Size.NONE) {
+            sb.append("\"size\": \"");
+            sb.append(getSizeName());
+            sb.append("\", ");
+        }
+
+        sb.append("\"price\": ");
+        sb.append(getPrice());
+        sb.append(", ");
+        sb.append("\"currency\": \"");
+        sb.append(getCurrency());
+        sb.append("\"}, ");
+    }
 }
