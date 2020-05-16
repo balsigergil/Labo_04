@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private final List<Product> products = new ArrayList<Product>();
+    private final List<Product> products = new ArrayList<>();
     private final int id;
 
     public Order(int id) {
@@ -35,8 +35,8 @@ public class Order {
         sb.append(", ");
         sb.append("\"products\": [");
 
-        for (int j = 0; j < getProductsCount(); j++) {
-            sb.append(getProduct(j).toJSON());
+        for (Product product : products) {
+            sb.append(product.toJSON());
         }
 
         if (getProductsCount() > 0) {
